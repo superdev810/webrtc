@@ -1,0 +1,30 @@
+<% include ../header  %>
+<link rel="stylesheet" href="/assets/css/login.css" type="text/css">
+<link rel="stylesheet" href="/assets/css/style.css" type="text/css">
+
+<div class="total-background"></div>
+
+<div class="page-container">
+  <div class="top-bar">
+    <img src="/assets/image/logo.png" class="logo"/>
+    <span class="top-label" onclick="go_home()"><font>ホーム</font></span>
+  </div>
+  <div class="text-center logo-img"><img id="logo-img" src="/assets/image/first_icon_disable.png"/></div>
+  <div class="text-center container-fluid">
+    <form action="/auth/sigin" method="post" id="signin-form">
+      <div class="row">
+        <input type="email" name="email" class="make-room-email round-txt control-label" required placeholder="メールアドレス">
+      </div>
+      <div class="row">
+        <input type="password" name="password" class="make-room-email round-txt control-label" required placeholder="パスワード">
+      </div>
+      <div class="mt-10">
+        <button type="submit" class="make-room-btn gradient-btn1 round-btn1 shadow-btn"><span class="btn-caption">サインイン</span></button>
+      </div>
+      <div class="text-danger" id="error-label"></div>
+    </form>
+  </div>
+</div>
+
+<script src="/js/users/signin.js"></script>
+<% include ../footer %>

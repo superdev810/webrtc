@@ -1,0 +1,30 @@
+<div class="bottom-background height-164 bottom-background-fix humans-bar-top" style="position: absolute;">
+  <div id="video-panel" class="humans-bar">
+    <div id="self-video-container" class="<%=my_data.role=='owner'?'human-owner':'human'%>">
+      <div class="video-frame">
+        <div class="video-top">
+          <span class="video-title"><%=my_data.Id%></span>
+          <span class="video-control video-camera"></span>
+          <span class="video-control video-mic"></span>
+          <!--<span class="video-control video-right-control video-message hand-pointer" onclick="switch_chat_user('public')"></span>-->
+        </div>
+        <div class="video-content">
+          <video id="self-video" class="wd-100 he-100"
+                 autoplay="autoplay" muted="muted" volume="0"
+                 poster="<%=my_data.avatar%>"
+            >
+          </video>
+        </div>
+        <div class="video-bottom">
+          <span class="video-control video-right-control video-zoom hand-pointer" onclick="on_full_screen('self-video-container')"></span>
+          <span class="video-control video-right-control video-mic video-mic-block hand-pointer" onclick="onMuteMicSelf()"></span>
+          <span class="video-control video-right-control video-camera video-camera-block hand-pointer" onclick="onMuteCameraSelf()"></span>
+          <%if (my_data.role != 'creator') {%>
+            <span class="video-control video-right-control video-user hand-pointer" onclick="onRefuseOwner('<%=my_data.Id%>' , '<%=my_data.email%>')"></span>
+          <%}%>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>

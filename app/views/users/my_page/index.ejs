@@ -1,0 +1,96 @@
+<% include ../../header %>
+
+<link rel="stylesheet" href="/assets/css/layout.css" type="text/css">
+<link rel="stylesheet" href="/assets/css/style.css" type="text/css">
+<link rel="stylesheet" href="/assets/css/home.css" type="text/css">
+
+<div class="page-container">
+  <div class="page-content-wrapper">
+    <div class="page-sidebar-wrapper">
+      <div class="page-header navbar">
+        <div class="page-header-inner">
+          <div class="page-logo">
+            <div class="img-circle"></div>
+            <a href="/">
+              <img src="/assets/image/home.png" class="va-m">
+              <span class="logo-title va-m">ホーム</span>
+            </a>
+          </div>
+          <a href="javascript:;" class="menu-toggler responsive-toggler" data-toggle="collapse" data-target=".navbar-collapse"></a>
+        </div>
+      </div>
+      <div class="page-sidebar navbar-collapse collapse" aria-expanded="false">
+        <ul class="page-sidebar-menu page-header-fixed" data-slide-speed="200" data-keep-expanded="false">
+          <li class="nav-item activated">
+            <a href="/users/my_page/profile">
+              <span>プロフィール</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="/users/my_page/room_manage">
+              <span>ルーム</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="/users/my_page/friend_manage">
+              <span>友だち</span>
+            </a>
+          </li>
+        </ul>
+      </div>
+<!--
+      <div id="log-out">
+        <span>ログアウト</span>
+      </div>
+-->
+    </div>
+    <div class="page-content">
+      My Profile
+      <input id="fileupload" type="file" name="files[]" data-url="/users/upload-avatar" accept="image/*" style="display: none">
+
+      <form class="col-md-offset-2 col-md-8 form-horizontal" action="/confirm-room" method="post" id="user-form">
+        <div class="row">
+          <div class="room-maker">
+            <div class="room-maker-title"></div>
+            <div class="room-maker-body">
+              <div class="form-group ta-c mt-70 mb-70">
+                <img src="<%=user.profileImageURL%>" class="human-avatar" id="img-avatar">
+                <a class="btn btn-primary human-avatar-btn" onclick="upload_avatar()">アバタ変更</a>
+              </div>
+              <div class="form-group">
+                <label class="col-md-5 control-label" for="userid">ユーザーID*</label>
+                <div class="col-md-4">
+                  <input type="text" name="my_ID" class="form-control" value="<%=user.address!=null?user.address:''%>" id="my-ID" required>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label class="col-md-5 control-label" for="my-sex" style="padding-top: 0px;">性別</label>
+                <div class="col-md-4">
+                  <select name="my_sex" class="form-control" id="my-sex">
+                    <option value="male" <%=user.sex!='female'?'selected':''%>>男性</option>
+                    <option value="female" <%=user.sex=='female'?'selected':''%>>女性</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="row room-create text-center mt-10 mb-10">
+          <button type="submit" class="gradient-btn1 round-btn1 shadow-btn">
+            <span class="btn-caption">ルームに入る</span>
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+<script src="/components/blueimp-file-upload/js/vendor/jquery.ui.widget.js"></script>
+<script src="/components/blueimp-file-upload/js/jquery.iframe-transport.js"></script>
+<script src="/components/blueimp-file-upload/js/jquery.fileupload.js"></script>
+
+<script src="/assets/js/home.js"></script>
+<script src="/js/users/my_profile.js"></script>
+
+<% include ../../footer %>

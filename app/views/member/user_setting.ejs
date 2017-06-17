@@ -1,0 +1,64 @@
+<% include ../header %>
+<link rel="stylesheet" href="/assets/css/style.css" type="text/css">
+<link rel="stylesheet" href="/assets/css/room_make.css" type="text/css">
+
+<div class="total-background"></div>
+<div class="container-fluid">
+  <div class="top-bar">
+    <img src="/assets/image/logo.png" class="logo"/>
+    <span class="top-label" onclick="go_mypage()"><font>私のページ</font></span>
+  </div>
+  <input id="fileupload" type="file" name="files[]" data-url="/users/upload-avatar" accept="image/*" style="display: none">
+
+  <form class="col-md-offset-2 col-md-8 form-horizontal" action="/confirm-room" method="post" id="user-form">
+    <div class="row">
+      <div class="room-maker">
+        <div class="room-maker-title"></div>
+        <div class="room-maker-body">
+          <div class="form-group ta-c">
+            <img src="/assets/image/human.png" class="human-avatar" id="img-avatar">
+            <a class="btn btn-primary human-avatar-btn" onclick="upload_avatar()">アバタ変更</a>
+          </div>
+          <div class="form-group">
+            <label class="col-md-5 control-label" for="userid">ユーザーID*</label>
+            <div class="col-md-4">
+              <input type="text" name="my_ID" class="form-control" id="my-ID" required>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label class="col-md-5 control-label" for="my-address" style="padding-top: 0px;">住所</label>
+            <div class="col-md-4">
+              <input type="text" name="my_address" id="my-address" class="form-control">
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label class="col-md-5 control-label" for="my-sex" style="padding-top: 0px;">性別</label>
+            <div class="col-md-4">
+              <select name="my_sex" class="form-control" id="my-sex">
+                <option value="">性別を選択してください</option>
+                <option value="male">男性</option>
+                <option value="female">男性</option>
+              </select>
+            </div>
+          </div>
+        </div>
+        <img src="assets/image/room-maker-shadow.png" class="room-maker-shadow">
+      </div>
+    </div>
+
+    <div class="row room-create">
+      <button type="submit" class="gradient-btn1 round-btn1 shadow-btn">
+        <span class="btn-caption">ルームに入る</span>
+      </button>
+    </div>
+  </form>
+</div>
+
+<script src="/components/blueimp-file-upload/js/vendor/jquery.ui.widget.js"></script>
+<script src="/components/blueimp-file-upload/js/jquery.iframe-transport.js"></script>
+<script src="/components/blueimp-file-upload/js/jquery.fileupload.js"></script>
+
+<script src="js/member/user_setting.js"></script>
+<% include ../footer %>

@@ -1,0 +1,78 @@
+body {
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+}
+
+/* white board */
+#canvas-container {
+  height: 100%;
+  position: absolute;
+  width: 100% !important;
+  overflow: scroll;
+}
+
+.canvas-main{
+  -webkit-user-select: none;
+  -webkit-user-drag: none;
+  -webkit-tap-highlight-color: rgba(0,0,0,0);
+  width: 2000px;
+  height: 1500px;
+}
+
+.wb-main-board {
+  position: absolute;
+  z-index: 11;
+}
+
+.wb-back-board {
+  position: absolute;
+  z-index: 10; }
+
+.wb-toolbar {
+  position: absolute;
+  z-index: 99;
+  /*top: 3px;*/
+  /*left: 3px;*/
+}
+
+.cur-default {
+  cursor: default;
+}
+.cur-cross {
+  cursor: crosshair;
+}
+.cur-pen {
+  cursor: url(../cursor/pen.png), auto;
+}
+.cur-paint {
+  cursor: url(../cursor/paint.png), auto;
+}
+.cur-eraser {
+  cursor: url(../cursor/eraser.png), auto;
+}
+
+/* pdf board */
+#pdf-board div {
+  -webkit-box-sizing: content-box;
+  -moz-box-sizing: content-box;
+  box-sizing: content-box;
+}
+
+.loading {
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  text-align: center;
+  z-index: 10000;
+  background-color: rgba(2, 2, 2, 0.5);
+  display: none;
+}
+.loading img {
+  position: absolute;
+  top: 45%;
+}
+
+#thumbnailView{
+  width: 200px !important;
+}

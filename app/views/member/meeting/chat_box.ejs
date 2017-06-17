@@ -1,0 +1,38 @@
+<div class="fa fa-commenting fs-26 mr-5 mt-5 mb-5 mini-icon" id="mini-icon" onclick="showChatBox()"></div>
+<div class="col-md-4 padding-lr-6 he-100" id="chatbox-panel">
+  <div class="container1 frame-div max-width">
+    <div class="frame-top-bar">
+    </div>
+    <div class="frame-content padding-top-10 max-height">
+      <div>
+        <div class="fa fa-close float-right ml-5 mr-5 fs-20 icon" onclick="hideChatBox()"></div>
+      </div>
+      <div class="label ta-l inline-block" id="lbl-chat-title">
+        公開メッセージ
+        <button class="btn btn-circle speaker" onclick="togglePolly()" data-toggle="button">
+          <i class="fa fa-volume-up"></i>
+          <i class="fa fa-power-off"></i>
+        </button>
+        <select class="language" id="polly-lang">
+          <option value="jp">Japan</option>
+          <option value="en">English</option>
+        </select>
+      </div>
+      <div class="search-result">
+        <div class="board" id="msg-board">
+        </div>
+      </div>
+      <div class="searchbox">
+        <div class="form-search">
+          <input type="text" class="search-input" id="msg-input" placeholder="メッセージを入力してください">
+          <button class="gradient-btn4 round-btn1 shadow-btn w-90 height-41 v-center" onclick="send_message()">
+            <span class="btn-caption">送 信</span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
+<div class="resize-bar" id="resize-bar"></div>
+

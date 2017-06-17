@@ -1,0 +1,82 @@
+<% include ../../header %>
+
+<!-- pdf.js css -->
+<link href="/custom-libs/pdfjs/web/viewer.css" rel="stylesheet" />
+<!-- This snippet is used in production -->
+<link rel="resource" type="application/l10n" href="/custom-libs/pdfjs/web/locale/locale.properties" />
+
+<!--Video CSS Include-->
+<link rel="stylesheet" href="/components/video.js/dist/video-js/video-js.css" type="text/css"/>
+
+<link rel="stylesheet" href="/assets/css/style.css" type="text/css"/>
+<link rel="stylesheet" href="/assets/css/room.css" type="text/css" />
+<link rel="stylesheet" href="/assets/css/modal.css" type="text/css" />
+<link rel="stylesheet" href="/assets/css/avatar-video.css" type="text/css" />
+<link rel="stylesheet" href="/css/wb-toolbar.css" type="text/css"/>
+
+<script src="/socket.io/socket.io.js"></script>
+<script type="text/javascript" src="/easyrtc/easyrtc.js"></script>
+
+<!-- moment -->
+<script src="/custom-libs/moment-with-locales.min.js"></script>
+
+<!-- start page -->
+<div class="total-background"></div>
+<% include top_bar.ejs %>
+<div class="content row padding-lr-6 main-board">
+  <% include chat_box.ejs %>
+  <% include panels.ejs %>
+</div>
+<% include videos_panel.ejs %>
+
+<% include ../../common/modals/dlg_upload %>
+<% include ../../common/modals/dlg_download %>
+<!-- end page -->
+
+<script>
+  var my_data = <%-JSON.stringify(my_data)%>;
+  var room_name = "<%=room_name%>";
+  var room_type = "meeting";
+  var messages = <%-JSON.stringify(messages)%>;
+</script>
+
+<script src="/components/blueimp-file-upload/js/vendor/jquery.ui.widget.js"></script>
+<script src="/components/blueimp-file-upload/js/jquery.iframe-transport.js"></script>
+<script src="/components/blueimp-file-upload/js/jquery.fileupload.js"></script>
+
+<!--Video JS Include-->
+<script src="/custom-libs/video.js/dist/video-js/video.js"></script>
+
+<script src="/js/member/main.js"></script>
+<script src="/js/member/vchat.js"></script>
+<script src="/js/common/ui.js"></script>
+<script src="/js/common/message.js"></script>
+<script src="/js/common/dlg_modal.js"></script>
+
+<script src="/custom-libs/Math.uuid.js"></script>
+
+<!-- pdf.js javascript -->
+<script src="/custom-libs/pdfjs/web/compatibility.js"></script>
+<script src="/custom-libs/pdfjs/web/l10n.js"></script>
+<script src="/custom-libs/pdfjs/build/pdf.js"></script>
+<script src="/custom-libs/pdfjs/web/debugger.js"></script>
+<script src="/custom-libs/pdfjs/web/pdfviewer.js"></script>
+
+
+<!-- whiteboard share javascript -->
+<script src="/custom-libs/white-board/paperjs/paper-full.js"></script>
+<script src="/custom-libs/white-board/sharejs/bcsocket.js"></script>
+<script src="/custom-libs/white-board/sharejs/share.uncompressed.js"></script>
+<script src="/custom-libs/white-board/sharejs/json.uncompressed.js"></script>
+<!--<script src="/custom-libs/white-board/custome_whiteboard_toolbar.js"></script>-->
+<!--<script src="/custom-libs/white-board/require.js" data-main="/custom-libs/white-board/white_board.js"></script>-->
+<script src="/custom-libs/white-board/require.js" data-main="/custom-libs/white-board/member_wb.js"></script>
+
+<!-- color picker -->
+<script src="/custom-libs/jqColorPicker.min.js"></script>
+<!-- auto grow input -->
+<script src="/custom-libs/jquery.auto-grow-input.min.js"></script>
+<!-- aws sdk -->
+<script src="/components/aws-sdk-js/dist/aws-sdk.min.js"></script>
+
+<% include ../../footer %>

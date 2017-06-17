@@ -1,0 +1,50 @@
+<div class="modal fade" id="dlg-invite">
+  <div class="modal-dialog">
+    <div class="modal-content main-dialog">
+      <div class="modal-body">
+        <div>
+          <button class="btn-close" data-dismiss="modal">
+            <div class="gradient-close"></div>
+          </button>
+        </div>
+        <div class="mt-40">
+          <div class="row">
+            <label class="col-md-4 ta-r">ルームのURL : </label>
+            <span id="lbl-share-url" class="col-md-8">http://room_name</span>
+          </div>
+          <div id="invite-address-group">
+            <div class="row mt-10" style="position: relative;">
+              <label class="col-md-4 ta-r control-label">メールアドレス : </label>
+              <div class="col-md-7" id="group-mail-box">
+                <input type="email" class="form-control" placeholder="">
+              </div>
+              <div class="col-md-1 pl-0" style="position: absolute; bottom: 0px; right: 0px;">
+                <a class="btn btn-primary form-control" id="btn-add" onclick="add_invite_mail_box()">
+                  <span>+</span>
+                </a>
+              </div>
+            </div>
+          </div>
+          <div class="mt-10 row">
+            <label class="col-md-4 ta-r control-label">招待内容 : </label>
+            <div class="col-md-7">
+              <textarea class="form-control" rows="2" id="invite-comment"></textarea>
+            </div>
+            <div class="col-md-1">
+
+            </div>
+          </div>
+          <div class="mt-20 mb-10 ta-c">
+            <button class="gradient-btn2 round-btn2 btn-pause-all p5" onclick="send_invite_mail()"><span class="btn-caption span-delete">招待メールを送信</span></button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script type="text/javascript">
+  function add_invite_mail_box(){
+    $('#group-mail-box').append('<input type="email" class="form-control mt-10" placeholder="">');
+  }
+</script>

@@ -1,0 +1,36 @@
+.main-board {
+  bottom: 0px;
+}
+.chat-box {
+  height: calc( 100% - 250px);
+}
+.humans-bar {
+  width: 100%;
+}
+.humans-bar-top {
+  height: 240px;
+}
+.human {
+  width: 55%;
+  margin-right: 7px;
+  height: 220px;
+  float: right;
+}
+.human-creator {
+  width: 55%;
+  margin-right: 7px;
+  height: 220px;
+  float: right;
+}
+.human-owner {
+  width: 55%;
+  margin-right: 7px;
+  height: 220px;
+  float: right;
+}
+#self-video-container {
+  width: 38%;
+  height: 340px;
+  margin-bottom: 80px;
+  float: left;
+}

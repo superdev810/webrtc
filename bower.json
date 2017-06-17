@@ -1,0 +1,21 @@
+{
+  "name": "moximo",
+  "version": "0.0.1",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "components"
+  ],
+  "dependencies": {
+    "jquery": "^1.11.3",
+    "jquery-ui": "~1.11.4",
+    "bootstrap": "^3.3.4",
+    "font-awesome": "^4.6.3",
+    "jquery-validation": "1.15.0",
+    "blueimp-file-upload": "^9.14.2",
+    "pdfjs-dist": "latest",
+    "datatables.net": "latest",
+    "datatables.net-dt": "latest",
+    "aws-sdk-js": "~2.39.0"
+  }
+}

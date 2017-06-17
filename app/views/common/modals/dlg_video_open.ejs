@@ -1,0 +1,47 @@
+<div class="modal fade" id="dlg-video-open">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content main-dialog">
+      <div class="modal-header remove-bottom-line">
+        <button class="btn-close" data-dismiss="modal">
+          <div class="gradient-close"></div>
+        </button>
+        <h3 class="modal-title">ファイルアップロード</h3>
+      </div>
+
+      <input type="hidden" value="<%=room_name%>" id="room-id">
+      <input type="hidden" value="<%=my_data._id%>" id="uploader-id">
+
+      <!--<input id="pdf_fileupload" type="file" name="files[]" accept="application/pdf" style="display: none">-->
+      <!--<input id="image_fileupload" type="file" name="files[]" accept="image/*" style="display: none">-->
+      <!--<input id="media_fileupload" type="file" name="files[]" accept="audio/*" style="display: none">-->
+      <!--<input id="other_fileupload" type="file" name="files[]" accept="*/*" style="display: none">-->
+
+      <div class="modal-body">
+        <div class="table-scrollable">
+          <table id="tbl-video-open"></table>
+        </div>
+        <div class="mt-10">
+          <div id="progress_panel"></div>
+          <!--<div style="display: inline;">-->
+            <!--<button class="gradient-btn2 round-btn3 upload-btn pdf-btn" onclick="upload_pdf()"><span-->
+                <!--class="btn-caption span-delete">PDF文書</span>-->
+            <!--</button>-->
+            <!--<button class="gradient-btn2 round-btn3 upload-btn" onclick="upload_image()"><span class="btn-caption span-delete">イメージ</span>-->
+            <!--</button>-->
+            <!--<button class="gradient-btn2 round-btn3 upload-btn" onclick="upload_media()"><span class="btn-caption span-delete">メディア</span>-->
+            <!--</button>-->
+            <!--<button class="gradient-btn2 round-btn3 upload-btn else-btn" onclick="upload_other()"><span-->
+                <!--class="btn-caption span-delete">その他</span>-->
+            <!--</button>-->
+          <!--</div>-->
+          <!--<div style="float: right; display: inline;">-->
+            <!--<button class="gradient-btn2 round-btn3 upload-btn" id="upload_all"><span class="btn-caption span-delete">すべてアップロード</span>-->
+            <!--</button>-->
+            <!--<button class="gradient-btn3 round-btn3 upload-btn" id="remove_all"><span class="btn-caption span-delete">すべてキャンセル</span>-->
+            <!--</button>-->
+          <!--</div>-->
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,46 @@
+<% include ../../header %>
+
+<!-- pdf.js css -->
+<link href="/components/pdfjs/web/viewer.css" rel="stylesheet" />
+<!-- This snippet is used in production -->
+<link rel="resource" type="application/l10n" href="/components/pdfjs/web/locale/locale.properties" />
+
+<link rel="stylesheet" href="/assets/css/style.css" type="text/css"/>
+<link rel="stylesheet" href="/assets/css/room.css" type="text/css" />
+<link rel="stylesheet" href="/assets/css/modal.css" type="text/css" />
+<link rel="stylesheet" href="/assets/css/avatar-video.css" type="text/css" />
+<link rel="stylesheet" href="/css/wb-toolbar.css" type="text/css"/>
+
+<script src="/socket.io/socket.io.js"></script>
+<script type="text/javascript" src="/easyrtc/easyrtc.js"></script>
+
+<!-- moment -->
+<script src="/custom-libs/moment-with-locales.min.js"></script>
+
+<!-- start page -->
+<div class="total-background"></div>
+<% include top_bar.ejs %>
+<% include videos_panel.ejs %>
+
+<!-- end page -->
+
+<script>
+  var my_data = <%-JSON.stringify(my_data)%>;
+  var room_name = "<%=room_name%>";
+  var room_type = "free";
+  var messages = <%-JSON.stringify(messages)%>;
+</script>
+
+<script src="/js/owner/free.js"></script>
+<script src="/js/owner/free_vchat.js"></script>
+<script src="/js/common/ui.js"></script>
+<script src="/js/common/message.js"></script>
+
+<script src="/custom-libs/Math.uuid.js"></script>
+
+<!-- color picker -->
+<script src="/custom-libs/jqColorPicker.min.js"></script>
+<!-- auto grow input -->
+<script src="/custom-libs/jquery.auto-grow-input.min.js"></script>
+
+<% include ../../footer %>

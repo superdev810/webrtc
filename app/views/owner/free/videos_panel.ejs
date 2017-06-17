@@ -1,0 +1,29 @@
+<div class="bottom-background height-100per bottom-background-fix free-humans-bar-top">
+  <!--<div class="row">-->
+    <div id="video-panel" class="free-humans-bar text-center">
+      <div id="self-video-container" class="free-human">
+        <div class="video-frame">
+          <div class="video-top">
+            <span class="video-control video-camera"></span>
+            <span class="video-control video-mic"></span>
+          </div>
+          <div class="video-content">
+            <video id="self-video" class="wd-100 he-100"
+                   autoplay="autoplay" muted="muted" volume="0"
+                   poster="<%= my_data.avatar %>"
+            >
+            </video>
+          </div>
+          <div class="video-bottom">
+            <span class="video-control video-right-control video-zoom hand-pointer"
+                  onclick="on_full_screen('self-video-container')"></span>
+            <span class="video-control video-right-control video-mic video-mic-block hand-pointer"
+                  onclick="onMuteMicSelf()"></span>
+            <span class="video-control video-right-control video-camera video-camera-block hand-pointer"
+                  onclick="onMuteCameraSelf()"></span>
+          </div>
+        </div>
+      </div>
+    </div>
+  <!--</div>-->
+</div>

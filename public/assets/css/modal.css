@@ -1,0 +1,137 @@
+.table-scrollable {
+  width: 100%;
+  overflow-x: auto;
+  overflow-y: hidden;
+  border: 1px solid #e7ecf1;
+  margin: 10px 0!important;
+}
+table.dataTable {
+  border-collapse: collapse;
+  width: 100% !important;
+}
+table.dataTable tbody td {
+  text-align: center;
+  height: 25px;
+  line-height: normal;
+}
+
+table.dataTable th {
+  text-align: center;
+}
+.dataTables_wrapper .dataTables_paginate a{
+  font-size: 14px;
+}
+
+/*
+.modal-title {
+  font-weight: bold;
+  font-size: 23px;
+}
+.modal-body {
+  padding-top: 0px;
+}
+.modal-header {
+  padding-bottom: 0px;
+}
+.modal-btn-button {
+  width: 100px!important;
+}
+*/
+
+.table-striped>tbody>tr:nth-of-type(odd) {
+  background-color: #fff;
+}
+
+.remove-bottom-line {
+  border-bottom: none!important;
+  padding-bottom: 0;
+}
+
+.remove-background {
+  background-image: none!important;
+}
+
+.table-bordered>thead>tr>th {
+  border: 1px solid rgb(225, 99, 126);
+}
+
+.table-bordered>tbody>tr>td {
+  border: 1px solid rgb(225, 99, 126);
+}
+
+
+
+.table-border-pink {
+  border: 1px solid rgb(225, 99, 126)!important;
+}
+
+.table-top-border-thick {
+  border-top: 4px solid rgb(255, 99, 126)!important;
+}
+
+.progress-left {
+  float: left;
+}
+
+.modal-pause-btn
+{
+  width: auto!important;
+}
+
+button[disabled] {
+  opacity: .5;
+}
+
+.word-wrap {
+  word-wrap: break-word;
+}
+
+.progress-bar-success {
+  background-color: #f051b0;
+}
+
+.modal-stop-btn {
+  width: 100px!important;
+  height: 100%!important;
+  position: absolute;
+  top: 0%!important;
+  left: auto!important;
+  margin-left: 10px;
+}
+
+.progress-top-margin {
+  margin-top: 5px;
+}
+
+.upload-btn{
+  width: auto!important;
+  height: auto!important;
+  padding: 5px;
+}
+
+.pdf-btn {
+  /*height: 30px!important;*/
+}
+
+.else-btn {
+  width: 78px!important;
+}
+
+.upload-btn-fix-width{
+
+}
+.item-right {
+  float: right;
+}
+.margin-bottom-10 {
+  margin-bottom: 10px;
+}
+
+.modal .btn-caption {
+  font-size: 16px !important;
+}
+
+.modal .gradient-btn2 {
+  width: auto;
+  padding: 5px 10px;
+}

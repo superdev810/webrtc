@@ -1,0 +1,69 @@
+<div class="col-md-8 padding-lr-6 he-100" id="share-panel">
+  <div class="container2 frame-div max-width">
+    <div class="frame-top-bar"></div>
+    <div class="frame-content max-height">
+      <div id="tabs" class="tabs">
+        <div class="tab-buttons ">
+          <button class="gradient-btn2 round-btn3 v-center float-right" onclick="open_modal('download')">
+            <span>ダウンロード</span>
+          </button>
+          <button class="gradient-btn2 round-btn3 v-center float-right upload-btn" onclick="open_modal('upload')">
+            <span>アップロード</span>
+          </button>
+          <ul class="nav nav-tabs float-left">
+            <li class="active" onclick="onChangeTabs(0)">
+              <a href="#pan-whiteboard" data-toggle="tab" aria-expanded="true">ホワイトボード</a>
+            </li>
+            <li class="" onclick="onChangeTabs(1)">
+              <a href="#pan-pdf" data-toggle="tab" aria-expanded="false">PDF文書</a>
+            </li>
+            <li class="" onclick="onChangeTabs(2)">
+              <a href="#pan-image" data-toggle="tab" aria-expanded="false">イメージ</a>
+            </li>
+            <li class="" onclick="onChangeTabs(3)">
+              <a href="#pan-media" data-toggle="tab" aria-expanded="false">メディア</a>
+            </li>
+          </ul>
+        </div>
+        <div class="tab-contents tab-content">
+          <!-- whiteboard panel -->
+          <div id="pan-whiteboard" class="tab-pane fade in active">
+            <div id="canvas-toolbar" class="wb-toolbar" onselectstart="return false;"></div>
+            <div id="canvas-container">
+              <!--<canvas id="canvas-back" data-paper-scope="0" class="wb-back-board" width="2000" height="2000"></canvas>-->
+              <canvas id="canvas-main" data-paper-scope="1" class="wb-main-board  canvas-main"></canvas>
+              <input type="text" id="auto-text"
+                     style="position: absolute; z-index: 99; font-size: 14px; visibility: hidden">
+            </div>
+          </div>
+
+          <!-- PDF Viewer panel -->
+          <div id="pan-pdf" class="tab-pane fade" style="height: 100%">
+            <button class="gradient-btn2 round-btn3 v-center float-right width-none" onclick="open_modal('open', 'pdf')" id="pdf-file-open" style="display:none;">
+              <span style="color: white;font-weight: bold;">ダウンロード</span>
+            </button>
+            <% include ../../common/pdf-board %>
+          </div>
+
+          <!--Image Viewer Panel-->
+          <div id="pan-image" class="tab-pane fade">
+            <button class="gradient-btn2 round-btn3 v-center float-right width-none mt-10 mr-10 w-50" onclick="open_modal('open', 'image')">
+              <span style="color: white;font-weight: bold;">開く</span>
+            </button>
+            <div class="image-wrapper" id="image-wrapper">
+              <img class=""/>
+            </div>
+          </div>
+<!--Media Panel-->
+          <div id="pan-media" class="tab-pane fade text-center">
+              <button class="gradient-btn2 round-btn3 v-center float-right width-none mt-10 mr-10 w-50" onclick="open_modal('open', 'media')">
+                <span style="color: white;font-weight: bold;">開く</span>
+              </button>
+            <video id="really-cool-video" class="video-js vjs-default-skin" controls>
+            </video>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

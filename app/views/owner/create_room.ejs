@@ -1,0 +1,87 @@
+<% include ../header %>
+<link rel="stylesheet" href="/assets/css/style.css" type="text/css">
+<link rel="stylesheet" href="/assets/css/room_make.css" type="text/css">
+
+<div class="total-background"></div>
+<div class="container-fluid">
+  <div class="top-bar">
+    <img src="/assets/image/logo.png" class="logo"/>
+    <span class="top-label" onclick="go_mypage()"><font>私のページ</font></span>
+  </div>
+
+  <form class="col-md-offset-2 col-md-8 form-horizontal" action="/confirm-room" method="post" id="room-form">
+    <div class="row">
+      <div class="room-maker">
+        <div class="room-maker-title"></div>
+        <div class="room-maker-body">
+          <div class="form-group">
+            <label class="col-md-5 control-label" for="room-name">ルーム名*</label>
+            <div class="col-md-4">
+              <input class="form-control" type="text" id="room-name" name="room_name" required placeholder="a-z A-Z 0-9">
+              <span class="mt-10 dis-block" id="valid-message"></span>
+            </div>
+            <div class="col-md-3">
+              <a class="btn gradient-btn1 round-btn1 shadow-btn check-btn" id="btn-check" type="button">
+                <span class="btn-caption">チェック</span>
+              </a>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label class="col-md-5 control-label" for="room-type" style="padding-top: 0px;">タイプ*</label>
+            <div class="col-md-4">
+              <select class="form-control" name="room_type" id="room-type" required>
+                <option value="meeting">会議</option>
+                <option value="lesson">授業</option>
+                <option value="couple">カップル</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label class="col-md-5 control-label" for="userid">ユーザーID*</label>
+            <div class="col-md-4">
+              <input type="text" name="my_ID" class="form-control" id="my-ID" required>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label class="col-md-5 control-label" for="room_password_check">ルームにパスワードを設定</label>
+            <div class="col-md-4">
+              <div class="checkbox">
+                <input type="checkbox" name="is_protect" id="protect">
+                <!--<input type="checkbox" id="room_password_check">-->
+              </div>
+            </div>
+          </div>
+
+          <div id="password-panel" style="display: none">
+            <div class="form-group">
+              <label class="col-md-5 control-label" for="room-pass">ルームパスワード</label>
+              <div class="col-md-4">
+                <input type="password" name="room_pass" class="form-control" id="room-pass">
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label class="col-md-5 control-label" for="room-pass-confirm">パスワード確認</label>
+              <div class="col-md-4">
+                <input type="password" name="room_pass_confirm" class="form-control" id="room-pass-confirm">
+              </div>
+            </div>
+          </div>
+        </div>
+        <img src="assets/image/room-maker-shadow.png" class="room-maker-shadow">
+      </div>
+    </div>
+
+    <div class="row room-create">
+      <button type="submit" class="gradient-btn1 round-btn1 shadow-btn">
+        <span class="btn-caption">ルームを作成</span>
+      </button>
+    </div>
+  </form>
+</div>
+
+<script src="js/setting/create_room.js"></script>
+<% include ../footer %>

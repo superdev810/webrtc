@@ -1,0 +1,119 @@
+<% include ../../header %>
+
+<link rel="stylesheet" href="/assets/css/layout.css" type="text/css">
+<link rel="stylesheet" href="/assets/css/style.css" type="text/css">
+<link rel="stylesheet" href="/assets/css/home.css" type="text/css">
+
+<div class="page-container">
+  <div class="page-content-wrapper">
+    <div class="page-sidebar-wrapper">
+      <div class="page-header navbar">
+        <div class="page-header-inner">
+          <div class="page-logo">
+            <div class="img-circle"></div>
+            <a href="/">
+              <img src="/assets/image/home.png" class="va-m">
+              <span class="logo-title va-m">ホーム</span>
+            </a>
+          </div>
+          <a href="javascript:;" class="menu-toggler responsive-toggler" data-toggle="collapse" data-target=".navbar-collapse"></a>
+        </div>
+      </div>
+      <div class="page-sidebar navbar-collapse collapse" aria-expanded="false">
+        <ul class="page-sidebar-menu page-header-fixed" data-slide-speed="200" data-keep-expanded="false">
+          <li class="nav-item ">
+            <a href="/users/my_page/profile">
+              <span>プロフィール</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="/users/my_page/room_manage">
+              <span>ルーム</span>
+            </a>
+          </li>
+          <li class="nav-item activated">
+            <a href="/users/my_page/friend_manage">
+              <span>友だち</span>
+            </a>
+          </li>
+        </ul>
+      </div>
+<!--
+      <div id="log-out">
+        <span>ログアウト</span>
+      </div>
+-->
+    </div>
+    <div class="page-content">
+      <!------------------- table start------------------>
+      <div class="table-responsive">
+        <table class="table friend-table" border="1">
+          <thead>
+          <tr>
+            <th style="width: 10%;"></th>
+            <th style="width: 20%;">名前</th>
+            <th style="width: 60%;">メールアドレス</th>
+            <th style="width: 10%;"></th>
+          </tr>
+          </thead>
+          <tbody>
+          <%friends.forEach(function (friend, index) {%>
+          <tr>
+            <td>
+									<span class="checkbox">
+										<input type="checkbox" data="<%=friend.email%>" id="<%=friend._id%>">
+									</span>
+            </td>
+            <td>
+              <span id="<%=friend._id+'_id'%>"><%=friend.Id%></span>
+            </td>
+            <td>
+              <span id="<%=friend._id+'_email'%>"><%=friend.email%></span>
+            </td>
+            <td>
+              <a class="btn btn-icon-only red" onclick="edit_friend('<%=friend._id%>')">
+                <img src="/assets/image/edit-btn.png"/>
+              </a>
+            </td>
+          </tr>
+          <%})%>
+          </tbody>
+        </table>
+      </div>
+      <!------------------- table end------------------>
+      <div class="row new-friend">
+        <div class="col-md-4 col-sm-4 col-xs-12 form-group">
+          <label class="col-md-3 col-xs-12" for="name">名前</label>
+          <input class="col-md-9 col-xs-12" id="name">
+        </div>
+        <div class="col-md-6 col-sm-8 col-xs-12 form-group">
+          <label class="col-md-5 col-xs-12" for="email">メールアドレス</label>
+          <input class="col-md-7 col-xs-12" id="email">
+        </div>
+        <div class="col-md-2 col-sm-12 col-xs-12" style="text-align: right;">
+          <span class="error mr-70" style="display:none" id="error_msg">Error Message</span>
+          <button class="gradient-btn3 round-btn3 btn-save" onclick="save_friend()">
+            <span class="btn-caption">保存</span>
+          </button>
+        </div>
+      </div>
+      <div class="row vbtn_area">
+        <button class="gradient-btn3 round-btn3 btn-video-chatting" onclick="create_free_video()">
+          <span class="btn-caption">フリービデオチャット</span>
+        </button>
+        <button class="gradient-btn3 round-btn3 btn-delete" onclick="delete_friend()">
+          <span class="btn-caption">削除</span>
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script src="/components/blueimp-file-upload/js/vendor/jquery.ui.widget.js"></script>
+<script src="/components/blueimp-file-upload/js/jquery.iframe-transport.js"></script>
+<script src="/components/blueimp-file-upload/js/jquery.fileupload.js"></script>
+
+<script src="/assets/js/home.js"></script>
+<script src="/js/users/my_profile.js"></script>
+
+<% include ../../footer %>

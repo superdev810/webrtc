@@ -1,0 +1,101 @@
+<% include ../../header %>
+
+<link rel="stylesheet" href="/assets/css/layout.css" type="text/css">
+<link rel="stylesheet" href="/assets/css/style.css" type="text/css">
+<link rel="stylesheet" href="/assets/css/home.css" type="text/css">
+
+<div class="page-container">
+  <div class="page-content-wrapper">
+    <div class="page-sidebar-wrapper">
+      <div class="page-header navbar">
+        <div class="page-header-inner">
+          <div class="page-logo">
+            <div class="img-circle"></div>
+            <a href="/">
+              <img src="/assets/image/home.png" class="va-m">
+              <span class="logo-title va-m">ホーム</span>
+            </a>
+          </div>
+          <a href="javascript:;" class="menu-toggler responsive-toggler" data-toggle="collapse"
+             data-target=".navbar-collapse"></a>
+        </div>
+      </div>
+      <div class="page-sidebar navbar-collapse collapse" aria-expanded="false">
+        <ul class="page-sidebar-menu page-header-fixed" data-slide-speed="200" data-keep-expanded="false">
+          <li class="nav-item">
+            <a href="/users/my_page/profile">
+              <span>プロフィール</span>
+            </a>
+          </li>
+          <li class="nav-item activated">
+            <a href="/users/my_page/room_manage">
+              <span>ルーム</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="/users/my_page/friend_manage">
+              <span>友だち</span>
+            </a>
+          </li>
+        </ul>
+      </div>
+      <!--
+            <div id="log-out">
+              <span>ログアウト</span>
+            </div>
+      -->
+    </div>
+    <div class="page-content">
+      <!------------------- table start------------------>
+      <div class="table-responsive">
+        <table class="table friend-table" border="1">
+          <thead>
+          <tr>
+            <th style="width: 20%;">ルーム名</th>
+            <th style="width: 10%;">タイプ</th>
+            <th style="width: 20%;">作成日付</th>
+            <th style="width: 20%;">最終アクセス時間</th>
+            <th style="width: 10%;">友だち</th>
+            <th style="width: 20%;">アクション</th>
+          </tr>
+          </thead>
+          <tbody>
+          <% rooms.forEach(function(room, index){ %>
+          <tr>
+            <td>
+              <span><%=room.room_name %></span>
+            </td>
+            <td>
+              <span><%=room.room_type%></span>
+            </td>
+            <td>
+              <span><%=room.created.toLocaleDateString() + ' ' + room.created.toLocaleTimeString()%></span>
+            </td>
+            <td>
+              <span><%=room.last_active!=null?room.last_active:''%></span>
+            </td>
+            <td>
+              <span><%=room.users.length-1%></span>
+            </td>
+            <td>
+              <span class="mlr-10p"><a href="/<%=room.room_name%>"><i class="fa fa-arrow-right fs-20"></i></a></span>
+              <span class="mlr-10p hand-pointer" onclick="remove_room('<%=room.room_name%>')"><i class="fa fa-close fs-20 text-danger"></i></span>
+            </td>
+          </tr>
+          <% }) %>
+          </tbody>
+        </table>
+      </div>
+      <!------------------- table end------------------>
+    </div>
+  </div>
+</div>
+
+<script src="/components/blueimp-file-upload/js/vendor/jquery.ui.widget.js"></script>
+<script src="/components/blueimp-file-upload/js/jquery.iframe-transport.js"></script>
+<script src="/components/blueimp-file-upload/js/jquery.fileupload.js"></script>
+
+<script src="/assets/js/home.js"></script>
+<script src="/js/users/my_profile.js"></script>
+
+<% include ../../footer %>

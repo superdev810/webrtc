@@ -1,0 +1,53 @@
+<% include header %>
+<link rel="stylesheet" href="/assets/css/login.css" type="text/css">
+<link rel="stylesheet" href="/assets/css/style.css" type="text/css">
+
+<div class="total-background"></div>
+<div class="page-container">
+  <div class="top-bar">
+    <img src="/assets/image/logo.png" class="logo"/>
+    <% if (user){%>
+    <a href="/users/my_page/profile" class="top-label">私のページ</a>
+    <span class="top-label" onclick="go_mypage()"><font>私のページ</font></span>
+<!--
+    <a class="ml-10" href="/auth/signout">Log out</a>
+-->
+    <%} else {%>
+    <span class="top-label" onclick="go_signin()"><font>サインイン</font></span>
+    <a class="top-label" href="/users/sign_in">サインイン</a>
+    <%}%>
+
+    <!--<span class="top-label"><font>サインイン</font></span>-->
+  </div>
+  <div class="text-center logo-img"><img id="logo-img" src="/assets/image/first_icon_disable.png"/></div>
+  <div class="text-center container-fluid">
+    <form action="/create-room" method="post">
+      <div class="row">
+        <input class="make-room-email round-txt control-label" type="text" placeholder="メールアドレスを入力してください。" name="email" value="<%=(user ? user.email : '')%>" required>
+        <button type="submit" class="make-room-btn gradient-btn1 round-btn1 shadow-btn"><span class="btn-caption">ルームを作成する</span></button>
+      </div>
+      <% if(error){%>
+      <div class="text-danger">
+        <%- error %>
+      </div>
+      <%}%>
+    </form>
+  </div>
+</div>
+
+<script>
+  $(function(){
+    var index = 0;
+    var changeImg = function() {
+      if(index % 2 == 0) {
+        $('#logo-img').attr('src', '/assets/image/first_icon_enable.png');
+      }else {
+        $('#logo-img').attr('src', '/assets/image/first_icon_disable.png');
+      }
+      index++;
+      setTimeout(changeImg, 1000);
+    };
+    setTimeout(changeImg, 1000);
+  })
+</script>
+<% include footer %>

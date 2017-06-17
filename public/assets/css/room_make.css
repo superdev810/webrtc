@@ -1,0 +1,149 @@
+.logo
+{
+  margin-top: 60px;
+  margin-left: 10%;
+  width: 10%;
+}
+
+.logo-img {
+  padding-top: 30px;
+  margin-left: 12px;
+  -webkit-background-size: 100% 100vh;
+  background-size: 100% 100vh;
+}
+#logo-img {
+
+  -webkit-background-size: 100% 100vh;
+  background-size: 100% 100vh;
+  width: 50%;
+  max-width: 396px;
+}
+.top-bar{
+
+}
+
+.top-label {
+  float: right;
+  margin-right: 20px;
+  margin-top: 31px;
+  text-align: center;
+  line-height: 45px;
+  background: url("../image/loginbut.png");
+  width : 211px;
+  height: 45px;
+  display: block;
+  cursor: pointer;
+
+}
+
+.top-label>font
+{
+  font-size: 20px;
+  font-weight: bold;
+  color: #fff;
+  text-shadow: 0px 0px 3px #5c0000;
+}
+
+
+.top-background {
+	position: initial;
+}
+.room-make-form {
+
+}
+.room-maker {
+	margin-top: 100px;
+}
+
+@media screen and (max-height: 768px) {
+  .room-maker {
+    margin-top: 50px !important;
+  }
+}
+
+.room-maker>.room-maker-title {
+	min-height: 12px;
+	height: 10px;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+	background-color: rgb(225, 99, 126);
+}
+
+.room-maker>.room-maker-body {
+	position: relative;
+	padding: 10px;
+	padding-top: 25px;
+	border: 1px solid #fc849f;
+	border-top: none;
+	border-bottom-left-radius: 10px;
+	border-bottom-right-radius: 10px;
+	box-shadow: inset 0px -110px 250px 0px rgba(255, 255, 255, 1);
+	/*background-image: -webkit-linear-gradient(90deg, rgba(255, 255, 255, .5) 1%, transparent 50%, rgba(255, 255, 255, .5) 99%);
+	background-image:      -o-linear-gradient(90deg, rgba(255, 255, 255, .5) 1%, transparent 50%, rgba(255, 255, 255, .5) 99%);
+	background-image:         linear-gradient(90deg, rgba(255, 255, 255, .5) 1%, transparent 50%, rgba(255, 255, 255, .5) 99%);
+	z-index: 2;*/
+}
+.room-maker>.room-maker-body:before {
+	content: '';
+	position: absolute;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	border-bottom-left-radius: 12px;
+	border-bottom-right-radius: 12px;
+	/*background-image: -webkit-linear-gradient(rgba(255, 255, 255, 0) 0%, transparent 50%, rgba(255, 255, 255, 1) 80%, rgba(255, 255, 255, 1) 100%);
+	background-image:      -o-linear-gradient(rgba(255, 255, 255, 0) 0%, transparent 50%, rgba(255, 255, 255, 1) 80%, rgba(255, 255, 255, 1) 100%);
+	background-image:         linear-gradient(rgba(255, 255, 255, 0) 0%, transparent 50%, rgba(255, 255, 255, 1) 80%, rgba(255, 255, 255, 1) 100%);
+	z-index: 1;*/
+}
+.form-group{
+	z-index: 3;
+}
+
+.room-maker-body input {
+	border: 1px solid #e71694;
+	font-size: 23px;
+	height: initial;
+	-webkit-box-shadow: inset 0px 0px 0px 3px  rgba(251, 220, 233, 1.2);
+	box-shadow: inset 0px 0px 0px 3px rgba(251, 220, 233, 1.2);
+}
+
+.room-maker-body label {
+	color: #ad006e;
+	font-size: 23px;
+}
+
+.room-maker-body select {
+	border: 1px solid #e71694;
+	height: initial;
+	-webkit-box-shadow: inset 0px 0px 0px 3px  rgba(251, 220, 233, 1.2);
+	box-shadow: inset 0px 0px 0px 3px rgba(251, 220, 233, 1.2);
+}
+
+.room-maker-shadow {
+	width: 100%;
+	line-height: 0px;
+}
+.room-create {
+	text-align: center;
+    margin-bottom: 20px;
+}
+
+#btn-name-check {
+	min-width: 120px
+}
+
+#btn-create {
+	min-width: 200px;
+}
+.check-btn
+{
+	width: auto;
+}
+@media (max-height: 763px) {
+	.bottom-background
+	{
+		position: relative;
+	}
+}
